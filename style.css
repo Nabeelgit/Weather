@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    overflow: hidden;
+}
+.video-container{
+    width: 100vw;
+    height: 100vh;
+}     
+iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    user-select: none;
+}
+@media (min-aspect-ratio: 16/9) {
+    .video-container iframe {
+        height: 56.25vw;
+    }
+}
+    
+@media (max-aspect-ratio: 16/9) {
+    .video-container iframe {
+        width: 177.78vh;
+    }
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.weather-display {
+    padding: 1rem;
+}
+.temp {
+    display: flex;
+    align-items: center;
+}
+.temp #temperature{
+    font-size: 4rem;
+}
+.temp .units {
+    margin: 0.7rem 0 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.temp .units p {
+    cursor: pointer;
+    margin: 0;
+}
+.bottom-info {
+    text-transform: capitalize;
+    font-weight: bold;
+}
+.other-info {
+    display: flex;
+}
+.other-info div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 1rem;
+}
+.other-info div span {
+    font-size: 2rem;
+}
+#change_loc {
+    cursor: pointer;
+}
+svg {
+    width: 0.7rem;
+    margin: 0 0.3rem 0 0.3rem;
+    fill: white;
+}
+.error-msg {
+    margin: 1rem;
+    text-shadow: -1px -1px 5px black;
+}
+@media only screen and (max-width: 890px) {
+    .video-container {
+        display: none;
+    }
+    .container {
+        color: black;
+    }
+}
